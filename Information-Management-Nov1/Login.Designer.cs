@@ -28,9 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.exitBtn = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.userInput = new System.Windows.Forms.TextBox();
@@ -43,47 +40,13 @@
             this.err2 = new System.Windows.Forms.Label();
             this.err3 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.usernamePan = new System.Windows.Forms.Panel();
+            this.passwordPan = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // panel1
-            // 
-            this.panel1.BackgroundImage = global::Information_Management_Nov1.Properties.Resources.backLogin;
-            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(588, 537);
-            this.panel1.TabIndex = 0;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Verdana", 21.8F);
-            this.label3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label3.Location = new System.Drawing.Point(52, 117);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(460, 45);
-            this.label3.TabIndex = 1;
-            this.label3.Text = "Welcome to Login Menu";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Malgun Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label2.Location = new System.Drawing.Point(62, 186);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(450, 92);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Created By Robyn Kristoffer Fernandez from BSIT 2-F1\r\nBasic Information Managemen" +
-    "t for Create, Read, Update\r\nand Delete (CRUD)\r\n\r\n";
             // 
             // exitBtn
             // 
@@ -115,11 +78,13 @@
             this.userInput.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.userInput.BackColor = System.Drawing.SystemColors.Control;
+            this.userInput.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.userInput.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.8F);
-            this.userInput.Location = new System.Drawing.Point(651, 205);
+            this.userInput.Location = new System.Drawing.Point(651, 209);
             this.userInput.MaxLength = 100;
             this.userInput.Name = "userInput";
-            this.userInput.Size = new System.Drawing.Size(283, 30);
+            this.userInput.Size = new System.Drawing.Size(283, 23);
             this.userInput.TabIndex = 3;
             this.userInput.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -138,6 +103,8 @@
             this.passInput.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.passInput.BackColor = System.Drawing.SystemColors.Control;
+            this.passInput.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.passInput.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.8F);
             this.passInput.Location = new System.Drawing.Point(651, 286);
             this.passInput.MaxLength = 100;
@@ -154,7 +121,7 @@
             this.label5.Cursor = System.Windows.Forms.Cursors.Default;
             this.label5.Font = new System.Drawing.Font("Verdana", 13F, System.Drawing.FontStyle.Bold);
             this.label5.ForeColor = System.Drawing.Color.MediumSlateBlue;
-            this.label5.Location = new System.Drawing.Point(701, 137);
+            this.label5.Location = new System.Drawing.Point(712, 118);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(167, 26);
             this.label5.TabIndex = 1;
@@ -173,6 +140,7 @@
             this.loginBtn.TabIndex = 4;
             this.loginBtn.Text = "Login";
             this.loginBtn.UseVisualStyleBackColor = false;
+            this.loginBtn.Click += new System.EventHandler(this.loginBtn_Click);
             // 
             // checkBox1
             // 
@@ -237,12 +205,70 @@
             this.label6.TabIndex = 2;
             this.label6.Text = "Version: 0.1";
             // 
+            // panel1
+            // 
+            this.panel1.BackgroundImage = global::Information_Management_Nov1.Properties.Resources.backLogin;
+            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.label3);
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(588, 537);
+            this.panel1.TabIndex = 0;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Font = new System.Drawing.Font("Verdana", 21.8F);
+            this.label3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label3.Location = new System.Drawing.Point(52, 117);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(460, 45);
+            this.label3.TabIndex = 1;
+            this.label3.Text = "Welcome to Login Menu";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Malgun Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label2.Location = new System.Drawing.Point(62, 186);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(450, 92);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "Created By Robyn Kristoffer Fernandez from BSIT 2-F1\r\nBasic Information Managemen" +
+    "t for Create, Read, Update\r\nand Delete (CRUD)\r\n\r\n";
+            // 
+            // usernamePan
+            // 
+            this.usernamePan.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.usernamePan.Location = new System.Drawing.Point(651, 233);
+            this.usernamePan.Name = "usernamePan";
+            this.usernamePan.Size = new System.Drawing.Size(283, 2);
+            this.usernamePan.TabIndex = 8;
+            // 
+            // passwordPan
+            // 
+            this.passwordPan.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.passwordPan.Location = new System.Drawing.Point(651, 310);
+            this.passwordPan.Name = "passwordPan";
+            this.passwordPan.Size = new System.Drawing.Size(283, 2);
+            this.passwordPan.TabIndex = 9;
+            // 
             // loginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.ClientSize = new System.Drawing.Size(999, 537);
             this.ControlBox = false;
+            this.Controls.Add(this.passwordPan);
+            this.Controls.Add(this.usernamePan);
             this.Controls.Add(this.err3);
             this.Controls.Add(this.err2);
             this.Controls.Add(this.err1);
@@ -284,6 +310,8 @@
         private System.Windows.Forms.Label err2;
         private System.Windows.Forms.Label err3;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Panel usernamePan;
+        private System.Windows.Forms.Panel passwordPan;
     }
 }
 
