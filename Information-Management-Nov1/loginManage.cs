@@ -30,6 +30,14 @@ namespace Information_Management_Nov1
 
         }
 
+        public static void forgotPasswordTrigger()
+        {
+            /*
+                > Logic Forgot Password w/ DB
+                > 
+             */
+        }
+
 
     }
 }

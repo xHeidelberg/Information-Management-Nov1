@@ -40,6 +40,9 @@
             this.loginBtn = new System.Windows.Forms.Button();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.err1 = new System.Windows.Forms.Label();
+            this.err2 = new System.Windows.Forms.Label();
+            this.err3 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -194,9 +197,45 @@
             this.err1.ForeColor = System.Drawing.Color.Red;
             this.err1.Location = new System.Drawing.Point(671, 381);
             this.err1.Name = "err1";
-            this.err1.Size = new System.Drawing.Size(244, 17);
+            this.err1.Size = new System.Drawing.Size(143, 17);
             this.err1.TabIndex = 7;
-            this.err1.Text = "Username or Password Incorrect";
+            this.err1.Text = "                           ";
+            // 
+            // err2
+            // 
+            this.err2.AutoSize = true;
+            this.err2.BackColor = System.Drawing.Color.Transparent;
+            this.err2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.err2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold);
+            this.err2.ForeColor = System.Drawing.Color.Red;
+            this.err2.Location = new System.Drawing.Point(940, 286);
+            this.err2.Name = "err2";
+            this.err2.Size = new System.Drawing.Size(41, 29);
+            this.err2.TabIndex = 0;
+            this.err2.Text = "    ";
+            // 
+            // err3
+            // 
+            this.err3.AutoSize = true;
+            this.err3.BackColor = System.Drawing.Color.Transparent;
+            this.err3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.err3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold);
+            this.err3.ForeColor = System.Drawing.Color.Red;
+            this.err3.Location = new System.Drawing.Point(940, 205);
+            this.err3.Name = "err3";
+            this.err3.Size = new System.Drawing.Size(62, 29);
+            this.err3.TabIndex = 0;
+            this.err3.Text = "       ";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("MS Reference Sans Serif", 6.2F);
+            this.label6.Location = new System.Drawing.Point(594, 513);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(77, 15);
+            this.label6.TabIndex = 2;
+            this.label6.Text = "Version: 0.1";
             // 
             // loginForm
             // 
@@ -204,12 +243,15 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(999, 537);
             this.ControlBox = false;
+            this.Controls.Add(this.err3);
+            this.Controls.Add(this.err2);
             this.Controls.Add(this.err1);
             this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.loginBtn);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.passInput);
             this.Controls.Add(this.userInput);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.exitBtn);
@@ -239,6 +281,9 @@
         private System.Windows.Forms.Button loginBtn;
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.Label err1;
+        private System.Windows.Forms.Label err2;
+        private System.Windows.Forms.Label err3;
+        private System.Windows.Forms.Label label6;
     }
 }
 
