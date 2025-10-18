@@ -9,6 +9,9 @@ Table:		credential = login
 
 TODO: 
 
+new class for reusable method **
+	allControl add logoutTrigger method to logout button in mainForm
+
 Login Page: username and password fields **
 			login button **
 			messagebox for errors **

@@ -40,11 +40,11 @@
             this.err2 = new System.Windows.Forms.Label();
             this.err3 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
+            this.usernamePan = new System.Windows.Forms.Panel();
+            this.passwordPan = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.usernamePan = new System.Windows.Forms.Panel();
-            this.passwordPan = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -58,7 +58,7 @@
             this.exitBtn.Location = new System.Drawing.Point(935, 0);
             this.exitBtn.Name = "exitBtn";
             this.exitBtn.Size = new System.Drawing.Size(64, 51);
-            this.exitBtn.TabIndex = 1;
+            this.exitBtn.TabIndex = 5;
             this.exitBtn.Text = "X";
             this.exitBtn.UseVisualStyleBackColor = false;
             this.exitBtn.Click += new System.EventHandler(this.exitBtn_Click);
@@ -85,7 +85,7 @@
             this.userInput.MaxLength = 100;
             this.userInput.Name = "userInput";
             this.userInput.Size = new System.Drawing.Size(283, 23);
-            this.userInput.TabIndex = 3;
+            this.userInput.TabIndex = 1;
             this.userInput.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label4
@@ -110,8 +110,8 @@
             this.passInput.MaxLength = 100;
             this.passInput.Name = "passInput";
             this.passInput.PasswordChar = '●';
-            this.passInput.Size = new System.Drawing.Size(283, 30);
-            this.passInput.TabIndex = 3;
+            this.passInput.Size = new System.Drawing.Size(283, 23);
+            this.passInput.TabIndex = 2;
             this.passInput.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label5
@@ -152,7 +152,7 @@
             this.checkBox1.Location = new System.Drawing.Point(651, 333);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(141, 21);
-            this.checkBox1.TabIndex = 6;
+            this.checkBox1.TabIndex = 3;
             this.checkBox1.Text = "Show Password";
             this.checkBox1.UseVisualStyleBackColor = true;
             this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
@@ -205,6 +205,22 @@
             this.label6.TabIndex = 2;
             this.label6.Text = "Version: 0.1";
             // 
+            // usernamePan
+            // 
+            this.usernamePan.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.usernamePan.Location = new System.Drawing.Point(651, 233);
+            this.usernamePan.Name = "usernamePan";
+            this.usernamePan.Size = new System.Drawing.Size(283, 2);
+            this.usernamePan.TabIndex = 8;
+            // 
+            // passwordPan
+            // 
+            this.passwordPan.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.passwordPan.Location = new System.Drawing.Point(651, 310);
+            this.passwordPan.Name = "passwordPan";
+            this.passwordPan.Size = new System.Drawing.Size(283, 2);
+            this.passwordPan.TabIndex = 9;
+            // 
             // panel1
             // 
             this.panel1.BackgroundImage = global::Information_Management_Nov1.Properties.Resources.backLogin;
@@ -239,26 +255,10 @@
             this.label2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label2.Location = new System.Drawing.Point(62, 186);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(450, 92);
+            this.label2.Size = new System.Drawing.Size(427, 92);
             this.label2.TabIndex = 0;
-            this.label2.Text = "Created By Robyn Kristoffer Fernandez from BSIT 2-F1\r\nBasic Information Managemen" +
-    "t for Create, Read, Update\r\nand Delete (CRUD)\r\n\r\n";
-            // 
-            // usernamePan
-            // 
-            this.usernamePan.BackColor = System.Drawing.Color.MediumSlateBlue;
-            this.usernamePan.Location = new System.Drawing.Point(651, 233);
-            this.usernamePan.Name = "usernamePan";
-            this.usernamePan.Size = new System.Drawing.Size(283, 2);
-            this.usernamePan.TabIndex = 8;
-            // 
-            // passwordPan
-            // 
-            this.passwordPan.BackColor = System.Drawing.Color.MediumSlateBlue;
-            this.passwordPan.Location = new System.Drawing.Point(651, 310);
-            this.passwordPan.Name = "passwordPan";
-            this.passwordPan.Size = new System.Drawing.Size(283, 2);
-            this.passwordPan.TabIndex = 9;
+            this.label2.Text = "Created By Robyn Kristoffer Fernandez from BSIT 2-F1\r\nBasic Create, Read, Update " +
+    "and Delete (CRUD) \r\nA Requirements for Information Management\r\n\r\n";
             // 
             // loginForm
             // 

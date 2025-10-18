@@ -22,7 +22,7 @@ namespace Information_Management_Nov1
         private void exitBtn_Click(object sender, EventArgs e)
         {
             // confirmation
-            loginManage.ExitTrigger();
+            allControl.ExitTrigger();
         }
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
@@ -39,11 +39,12 @@ namespace Information_Management_Nov1
             string password = passInput.Text;
             bool whatwhatwhaaat = loginManage.loginTrigger(username, password);
 
-            if (whatwhatwhaaat)
+            if (whatwhatwhaaat) // true
             {
                 mainForm landing = new mainForm();
-                landing.Show();
                 this.Hide();
+                landing.ShowDialog(); // yawa
+                this.Close();
             }
 
         }

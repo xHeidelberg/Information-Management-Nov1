@@ -98,6 +98,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="allControl.cs" />
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -147,6 +148,8 @@
     <None Include="Resouce\backLogin.jpg" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resouce\lucidBack.jpeg" />
+    <None Include="Resouce\metioraBack.jpeg" />
     <Content Include="TODO.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

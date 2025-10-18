@@ -5,22 +5,13 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+//SQL
 using MySql.Data.MySqlClient;
 
 namespace Information_Management_Nov1
 {
     public static class loginManage
     {
-        public static void ExitTrigger()
-        {
-            DialogResult result = MessageBox.Show("Youre about to Exit.\nAre you sure you want to exit?", "Confirm Exit", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (result == DialogResult.Yes)
-                Environment.Exit(0);
-            else
-                return;
-
-        }
-
         public static bool loginTrigger(string username, string password)
         {
             /*
@@ -36,15 +27,16 @@ namespace Information_Management_Nov1
 
                 try
                 {
-                    // Logic for login process in Database
-
                     using (MySqlCommand command = new MySqlCommand(selector, connection))
                     {
+                        //parameter
                         command.Parameters.AddWithValue("@username", username);
                         command.Parameters.AddWithValue("@password", password);
-                        using (MySqlDataReader checker = command.ExecuteReader())
+                        // execute
+                        using (MySqlDataReader checker = command.ExecuteReader()) // execute username=@username AND password=@password
                         {
-                            if (checker.HasRows)
+                            // checking true or false
+                            if (checker.HasRows) // 1 row found, 0 rows not found
                             {
                                 MessageBox.Show("Login Successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                 return true;
@@ -52,11 +44,7 @@ namespace Information_Management_Nov1
                             else
                             {
                                 // Invalid credential
-                                DialogResult a = MessageBox.Show("Username or Password Incorrect", "Login Failed", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
-                                if (a == DialogResult.Cancel)
-                                {
-                                    Environment.Exit(0);
-                                }
+                                MessageBox.Show("Username or Password Incorrect", "Login Failed", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                                 return false;
                             }
 
