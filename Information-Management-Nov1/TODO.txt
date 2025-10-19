@@ -3,14 +3,16 @@
 Database:	basemanage	
 Table:		credential = login
 				Fields:		credential: id, username, password
-			information = details
-				Fields:		
+			information = main data
+				column:		recordNumber, engineNumber, chasisNumber, engineSize, model, yearModel, ownerName, purchaseDate
+				Type:    	varchar			varchar		  varchar		int       text     year      varchar     date
 
-
-TODO: 
+TODO: ** Added
+	  -X Not Added
+	  -TO Be Added Later
 
 new class for reusable method **
-	allControl add logoutTrigger method to logout button in mainForm
+	allControl add logoutTrigger method to logout button in mainForm **
 
 Login Page: username and password fields **
 			login button **
@@ -19,12 +21,19 @@ Login Page: username and password fields **
 			Exit Dialog **
 			Show/Hide Password Characters **
 			Background Image **
-			request login credentials -X 
+			request login credentials -X
 			forgot password hyperlink -X
 
 
 
-mainForm:	datagridview to show details from information table, add/edit/delete buttons to manage records
+mainForm:	Buttons: Add, Search, Edit, Delete, Search, Logout **
+				> Fucntionality to be added later -TO
+			LinkedLabel: Backup, Export, Import ** 
+				> Functionality to be added later -TO
+			Label: Last Modified, Status **
+				> Functionality to be added later -TO	
+
+			datagridview to show details from information table, add/edit/delete buttons to manage record
 			Create - Create new records in datagridview sync in database
 			Read - Search functionality to filter records in datagridview
 			Update - Update existing records in datagridview sync in database

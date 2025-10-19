@@ -21,7 +21,6 @@ namespace Information_Management_Nov1
 
         private void exitBtn_Click(object sender, EventArgs e)
         {
-            // confirmation
             allControl.ExitTrigger();
         }
 
@@ -37,13 +36,13 @@ namespace Information_Management_Nov1
         {
             string username = userInput.Text;
             string password = passInput.Text;
-            bool whatwhatwhaaat = loginManage.loginTrigger(username, password);
+            bool whatwhatwhaaat = loginManage.loginTriggerPublic (username, password);
 
             if (whatwhatwhaaat) // true
             {
                 mainForm landing = new mainForm();
                 this.Hide();
-                landing.ShowDialog(); // yawa
+                landing.ShowDialog(); // wait for main form to close before closing login form
                 this.Close();
             }
 

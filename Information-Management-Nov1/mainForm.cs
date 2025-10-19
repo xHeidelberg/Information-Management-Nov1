@@ -14,6 +14,7 @@ namespace Information_Management_Nov1
 {
     public partial class mainForm : Form
     {
+        // Minimum of 14 - 17 Engine Number/Chassis Number
         public mainForm()
         {
             InitializeComponent();
@@ -21,12 +22,26 @@ namespace Information_Management_Nov1
 
         private void linkedLogout_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            allControl.ExitTrigger();
+            if (allControl.logoutTrigger() == true)
+            {
+                this.Hide();
+                loginForm login = new loginForm();
+                login.ShowDialog();
+                // wait for the login to close before closing main form
+                this.Close();
+            }
+
         }
 
         private void linkedMinimize_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             allControl.MinimizeTrigger(this);
         }
+
+        private void exitBtn_Click(object sender, EventArgs e)
+        {
+            allControl.ExitTrigger();
+        }
+
     }
 }

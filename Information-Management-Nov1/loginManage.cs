@@ -12,14 +12,14 @@ namespace Information_Management_Nov1
 {
     public static class loginManage
     {
-        public static bool loginTrigger(string username, string password)
+        private static bool loginTrigger(string username, string password)
         {
             /*
                 > Login w/ DB check 
                 > If Success > return login Open Main Form close hide the login form
                 > show incorrect usern/pw messagebox
              */
-            string initiate = "server=localhost;user id=user;password=123456789;database=basemanage";
+            string initiate = "server=localhost; user id=user; password=123456789; database=basemanage";
             string selector = "SELECT * FROM basemanage.credential WHERE username=@username AND password=@password";
             using (MySqlConnection connection = new MySqlConnection(initiate))
             {
@@ -70,6 +70,11 @@ namespace Information_Management_Nov1
                 }
             }
 
+        }
+
+        public static bool loginTriggerPublic(string username, string password)
+        {
+            return loginTrigger(username, password);
         }
     }
 }
