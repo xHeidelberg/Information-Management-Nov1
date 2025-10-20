@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(mainForm));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.linkedImport = new System.Windows.Forms.LinkLabel();
             this.linkedReload = new System.Windows.Forms.LinkLabel();
@@ -38,39 +38,27 @@
             this.exitBtn = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.label14 = new System.Windows.Forms.Label();
             this.linkedMinimize = new System.Windows.Forms.LinkLabel();
             this.linkedLogout = new System.Windows.Forms.LinkLabel();
-            this.label14 = new System.Windows.Forms.Label();
             this.mainGrid = new System.Windows.Forms.DataGridView();
-            this.idNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.engineNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.chasisNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.engineSize = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.model = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.yearModel = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.frameColor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ownerName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.yearAcquire = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.recordnumberInput = new System.Windows.Forms.TextBox();
+            this.chassisInput = new System.Windows.Forms.TextBox();
             this.enginenumberInput = new System.Windows.Forms.TextBox();
             this.enginesizeInput = new System.Windows.Forms.TextBox();
             this.modelInput = new System.Windows.Forms.TextBox();
-            this.colorInput = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
             this.ownernameInput = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.purchaseDatePicker = new System.Windows.Forms.DateTimePicker();
             this.yearPicker = new System.Windows.Forms.DateTimePicker();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
+            this.addBtn = new System.Windows.Forms.Button();
+            this.deleteBtn = new System.Windows.Forms.Button();
+            this.searchBtn = new System.Windows.Forms.Button();
             this.updateBtn = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
@@ -117,6 +105,7 @@
             this.linkedReload.TabStop = true;
             this.linkedReload.UseCompatibleTextRendering = true;
             this.linkedReload.VisitedLinkColor = System.Drawing.Color.White;
+            this.linkedReload.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkedReload_LinkClicked);
             // 
             // linkedBackup
             // 
@@ -171,6 +160,13 @@
             resources.ApplyResources(this.panel2, "panel2");
             this.panel2.Name = "panel2";
             // 
+            // label14
+            // 
+            this.label14.BackColor = System.Drawing.Color.Transparent;
+            resources.ApplyResources(this.label14, "label14");
+            this.label14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
+            this.label14.Name = "label14";
+            // 
             // linkedMinimize
             // 
             this.linkedMinimize.ActiveLinkColor = System.Drawing.Color.White;
@@ -197,83 +193,21 @@
             this.linkedLogout.VisitedLinkColor = System.Drawing.Color.White;
             this.linkedLogout.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkedLogout_LinkClicked);
             // 
-            // label14
-            // 
-            this.label14.BackColor = System.Drawing.Color.Transparent;
-            resources.ApplyResources(this.label14, "label14");
-            this.label14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
-            this.label14.Name = "label14";
-            // 
             // mainGrid
             // 
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Century Gothic", 8.25F);
-            this.mainGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 8.25F);
+            this.mainGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
             this.mainGrid.BackgroundColor = System.Drawing.SystemColors.Control;
             this.mainGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.mainGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idNumber,
-            this.engineNumber,
-            this.chasisNumber,
-            this.engineSize,
-            this.model,
-            this.yearModel,
-            this.frameColor,
-            this.ownerName,
-            this.yearAcquire});
             resources.ApplyResources(this.mainGrid, "mainGrid");
             this.mainGrid.Name = "mainGrid";
             this.mainGrid.RowTemplate.Height = 24;
             this.mainGrid.TabStop = false;
             // 
-            // idNumber
+            // chassisInput
             // 
-            resources.ApplyResources(this.idNumber, "idNumber");
-            this.idNumber.Name = "idNumber";
-            // 
-            // engineNumber
-            // 
-            resources.ApplyResources(this.engineNumber, "engineNumber");
-            this.engineNumber.Name = "engineNumber";
-            // 
-            // chasisNumber
-            // 
-            resources.ApplyResources(this.chasisNumber, "chasisNumber");
-            this.chasisNumber.Name = "chasisNumber";
-            // 
-            // engineSize
-            // 
-            resources.ApplyResources(this.engineSize, "engineSize");
-            this.engineSize.Name = "engineSize";
-            // 
-            // model
-            // 
-            resources.ApplyResources(this.model, "model");
-            this.model.Name = "model";
-            // 
-            // yearModel
-            // 
-            resources.ApplyResources(this.yearModel, "yearModel");
-            this.yearModel.Name = "yearModel";
-            // 
-            // frameColor
-            // 
-            resources.ApplyResources(this.frameColor, "frameColor");
-            this.frameColor.Name = "frameColor";
-            // 
-            // ownerName
-            // 
-            resources.ApplyResources(this.ownerName, "ownerName");
-            this.ownerName.Name = "ownerName";
-            // 
-            // yearAcquire
-            // 
-            resources.ApplyResources(this.yearAcquire, "yearAcquire");
-            this.yearAcquire.Name = "yearAcquire";
-            // 
-            // recordnumberInput
-            // 
-            resources.ApplyResources(this.recordnumberInput, "recordnumberInput");
-            this.recordnumberInput.Name = "recordnumberInput";
+            resources.ApplyResources(this.chassisInput, "chassisInput");
+            this.chassisInput.Name = "chassisInput";
             // 
             // enginenumberInput
             // 
@@ -289,11 +223,6 @@
             // 
             resources.ApplyResources(this.modelInput, "modelInput");
             this.modelInput.Name = "modelInput";
-            // 
-            // colorInput
-            // 
-            resources.ApplyResources(this.colorInput, "colorInput");
-            this.colorInput.Name = "colorInput";
             // 
             // label2
             // 
@@ -329,13 +258,6 @@
             this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
             this.label6.Name = "label6";
-            // 
-            // label7
-            // 
-            resources.ApplyResources(this.label7, "label7");
-            this.label7.BackColor = System.Drawing.Color.Transparent;
-            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
-            this.label7.Name = "label7";
             // 
             // ownernameInput
             // 
@@ -374,49 +296,39 @@
             this.yearPicker.Name = "yearPicker";
             this.yearPicker.Value = new System.DateTime(2025, 10, 19, 0, 0, 0, 0);
             // 
-            // button2
+            // addBtn
             // 
-            this.button2.BackColor = System.Drawing.Color.YellowGreen;
-            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button2.FlatAppearance.BorderSize = 0;
-            resources.ApplyResources(this.button2, "button2");
-            this.button2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button2.Name = "button2";
-            this.button2.TabStop = false;
-            this.button2.UseVisualStyleBackColor = false;
+            this.addBtn.BackColor = System.Drawing.Color.YellowGreen;
+            this.addBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.addBtn.FlatAppearance.BorderSize = 0;
+            resources.ApplyResources(this.addBtn, "addBtn");
+            this.addBtn.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.addBtn.Name = "addBtn";
+            this.addBtn.TabStop = false;
+            this.addBtn.UseVisualStyleBackColor = false;
+            this.addBtn.Click += new System.EventHandler(this.addBtn_Click);
             // 
-            // button3
+            // deleteBtn
             // 
-            this.button3.BackColor = System.Drawing.Color.IndianRed;
-            this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button3.FlatAppearance.BorderSize = 0;
-            resources.ApplyResources(this.button3, "button3");
-            this.button3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button3.Name = "button3";
-            this.button3.TabStop = false;
-            this.button3.UseVisualStyleBackColor = false;
+            this.deleteBtn.BackColor = System.Drawing.Color.IndianRed;
+            this.deleteBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.deleteBtn.FlatAppearance.BorderSize = 0;
+            resources.ApplyResources(this.deleteBtn, "deleteBtn");
+            this.deleteBtn.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.deleteBtn.Name = "deleteBtn";
+            this.deleteBtn.TabStop = false;
+            this.deleteBtn.UseVisualStyleBackColor = false;
             // 
-            // button4
+            // searchBtn
             // 
-            this.button4.BackColor = System.Drawing.Color.Beige;
-            this.button4.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button4.FlatAppearance.BorderSize = 0;
-            resources.ApplyResources(this.button4, "button4");
-            this.button4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button4.Name = "button4";
-            this.button4.TabStop = false;
-            this.button4.UseVisualStyleBackColor = false;
-            // 
-            // button5
-            // 
-            this.button5.BackColor = System.Drawing.Color.Beige;
-            this.button5.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button5.FlatAppearance.BorderSize = 0;
-            resources.ApplyResources(this.button5, "button5");
-            this.button5.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button5.Name = "button5";
-            this.button5.TabStop = false;
-            this.button5.UseVisualStyleBackColor = false;
+            this.searchBtn.BackColor = System.Drawing.Color.Beige;
+            this.searchBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.searchBtn.FlatAppearance.BorderSize = 0;
+            resources.ApplyResources(this.searchBtn, "searchBtn");
+            this.searchBtn.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.searchBtn.Name = "searchBtn";
+            this.searchBtn.TabStop = false;
+            this.searchBtn.UseVisualStyleBackColor = false;
             // 
             // updateBtn
             // 
@@ -447,7 +359,7 @@
             // 
             resources.ApplyResources(this.statusLabel, "statusLabel");
             this.statusLabel.BackColor = System.Drawing.Color.Transparent;
-            this.statusLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
+            this.statusLabel.ForeColor = System.Drawing.Color.Green;
             this.statusLabel.Name = "statusLabel";
             // 
             // timestampLabel
@@ -463,15 +375,13 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(40)))), ((int)(((byte)(49)))));
             this.ControlBox = false;
-            this.Controls.Add(this.button5);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.updateBtn);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.searchBtn);
+            this.Controls.Add(this.deleteBtn);
+            this.Controls.Add(this.addBtn);
             this.Controls.Add(this.yearPicker);
             this.Controls.Add(this.purchaseDatePicker);
-            this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -483,12 +393,11 @@
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.colorInput);
             this.Controls.Add(this.modelInput);
             this.Controls.Add(this.enginesizeInput);
             this.Controls.Add(this.enginenumberInput);
             this.Controls.Add(this.ownernameInput);
-            this.Controls.Add(this.recordnumberInput);
+            this.Controls.Add(this.chassisInput);
             this.Controls.Add(this.mainGrid);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
@@ -511,37 +420,25 @@
         private System.Windows.Forms.LinkLabel linkedLogout;
         private System.Windows.Forms.LinkLabel linkedMinimize;
         private System.Windows.Forms.DataGridView mainGrid;
-        private System.Windows.Forms.TextBox recordnumberInput;
+        private System.Windows.Forms.TextBox chassisInput;
         private System.Windows.Forms.LinkLabel linkedExport;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idNumber;
-        private System.Windows.Forms.DataGridViewTextBoxColumn engineNumber;
-        private System.Windows.Forms.DataGridViewTextBoxColumn chasisNumber;
-        private System.Windows.Forms.DataGridViewTextBoxColumn engineSize;
-        private System.Windows.Forms.DataGridViewTextBoxColumn model;
-        private System.Windows.Forms.DataGridViewTextBoxColumn yearModel;
-        private System.Windows.Forms.DataGridViewTextBoxColumn frameColor;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ownerName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn yearAcquire;
         private System.Windows.Forms.TextBox enginenumberInput;
         private System.Windows.Forms.TextBox enginesizeInput;
         private System.Windows.Forms.TextBox modelInput;
-        private System.Windows.Forms.TextBox colorInput;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox ownernameInput;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.DateTimePicker purchaseDatePicker;
         private System.Windows.Forms.DateTimePicker yearPicker;
         private System.Windows.Forms.Button exitBtn;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button addBtn;
+        private System.Windows.Forms.Button deleteBtn;
+        private System.Windows.Forms.Button searchBtn;
         private System.Windows.Forms.Button updateBtn;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;

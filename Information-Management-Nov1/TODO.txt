@@ -38,4 +38,4 @@ mainForm:	Buttons: Add, Search, Edit, Delete, Search, Logout **
 			Read - Search functionality to filter records in datagridview
 			Update - Update existing records in datagridview sync in database
 			Delete - Delete selected records in datagridview sync in database ?? (Add Checkbox for selection)\
-			logout button to return to login page
+			logout button to return to login page - **

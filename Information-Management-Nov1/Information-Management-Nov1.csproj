@@ -99,6 +99,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="allControl.cs" />
+    <Compile Include="crudInitiator.cs" />
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>

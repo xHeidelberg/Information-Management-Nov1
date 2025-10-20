@@ -18,6 +18,7 @@ namespace Information_Management_Nov1
         public mainForm()
         {
             InitializeComponent();
+            allControl.viewDatabaseTrigger(mainGrid); // auto load without reload
         }
 
         private void linkedLogout_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -35,12 +36,59 @@ namespace Information_Management_Nov1
 
         private void linkedMinimize_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            allControl.MinimizeTrigger(this);
+            allControl.MinimizeTrigger(this); //Minimize
         }
 
         private void exitBtn_Click(object sender, EventArgs e)
         {
-            allControl.ExitTrigger();
+            allControl.ExitTrigger(); //Exit    
+        }
+
+        private void linkedReload_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            allControl.viewDatabaseTrigger(mainGrid); // Reload
+            statusLabel.Text = "Reloading";
+            statusLabel.ForeColor = Color.Red;
+
+            allControl.statusLabelTrigger(statusLabel, "Reloading", System.Drawing.Color.Red);
+        }
+
+        private void addBtn_Click(object sender, EventArgs e)
+        {
+            /*
+          column:		recordNumber, engineNumber, chasisNumber, engineSize, model, yearModel, ownerName, purchaseDate
+		    Type:    	varchar			varchar		  varchar		int       text     year      varchar     date
+         */
+            string engine = enginenumberInput.Text;
+            string chassis = chassisInput.Text;
+            string enginesize = enginesizeInput.Text;
+            string model = modelInput.Text;
+            string yearmodel = yearPicker.Value.ToString("yyyy");
+            string ownername = ownernameInput.Text;
+            string purchaseDate = purchaseDatePicker.Value.ToString("yyyy-MM-dd");
+
+
+            bool isSuccess = crudInitiator.addInitiator(engine, chassis, enginesize, model, yearmodel, ownername, purchaseDate);
+
+            if (isSuccess)
+                {
+                    // Optional: Update status label using the previously corrected trigger
+                    allControl.statusLabelTrigger(statusLabel, "Data Added!", System.Drawing.Color.Green);
+
+                    // Clear input fields
+                    chassisInput.Clear();
+                    enginenumberInput.Clear();
+                    enginesizeInput.Clear();
+                    modelInput.Clear();
+                    yearPicker.Value = DateTime.Now;
+                    ownernameInput.Clear();
+                    purchaseDatePicker.Value = DateTime.Now;
+
+                //refresg
+                allControl.viewDatabaseTrigger(mainGrid);
+
+            }
+
         }
 
     }
