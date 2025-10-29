@@ -91,5 +91,64 @@ namespace Information_Management_Nov1
 
         }
 
+        private void deleteBtn_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (mainGrid.SelectedRows.Count > 0)
+                {
+                    DataGridViewRow selectedRow = mainGrid.SelectedRows[0];
+
+                    // validate
+                    if (int.TryParse(selectedRow.Cells["recordNumber"].Value.ToString(), out int recordIdToDelete))
+                    {
+                        // Confirmation dialog
+                        DialogResult dialogResult = MessageBox.Show("Are you sure you want to delete the selected record?",
+                            "Confirm Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                        if (dialogResult == DialogResult.Yes)
+                        {
+                            crudInitiator dbManager = new crudInitiator();
+
+                            // separate
+                            if (dbManager.deleteInitiator(recordIdToDelete))
+                            {
+                                mainGrid.Rows.RemoveAt(selectedRow.Index);
+                                MessageBox.Show("Record deleted successfully!");
+                                allControl.viewDatabaseTrigger(mainGrid); // Refresh the grid
+                                return;
+                            }
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Could not get the ID from the selected row.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Please select a row to delete.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("An error occurred while trying to delete the record: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            
+        }
+
+        private void updateBtn_Click(object sender, EventArgs e)
+        {
+            updatePop pop = new updatePop();
+            pop.ShowDialog();
+        }
+
+        private void searchBtn_Click(object sender, EventArgs e)
+        {
+            searchPop searchPop = new searchPop();
+            searchPop.ShowDialog();
+        }
     }
 }

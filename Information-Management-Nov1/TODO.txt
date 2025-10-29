@@ -25,7 +25,6 @@ Login Page: username and password fields **
 			forgot password hyperlink -X
 
 
-
 mainForm:	Buttons: Add, Search, Edit, Delete, Search, Logout **
 				> Fucntionality to be added later -TO
 			LinkedLabel: Backup, Export, Import ** 
@@ -34,8 +33,8 @@ mainForm:	Buttons: Add, Search, Edit, Delete, Search, Logout **
 				> Functionality to be added later -TO	
 
 			datagridview to show details from information table, add/edit/delete buttons to manage record
-			Create - Create new records in datagridview sync in database
+			Create - Create new records in datagridview sync in database -**
 			Read - Search functionality to filter records in datagridview
 			Update - Update existing records in datagridview sync in database
-			Delete - Delete selected records in datagridview sync in database ?? (Add Checkbox for selection)\
+			Delete - Delete selected records in datagridview sync in database ?? - ** (Add Checkbox for selection)-X
 			logout button to return to login page - **

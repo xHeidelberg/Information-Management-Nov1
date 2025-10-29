@@ -115,6 +115,18 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="searchPop.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="searchPop.Designer.cs">
+      <DependentUpon>searchPop.cs</DependentUpon>
+    </Compile>
+    <Compile Include="updatePop.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="updatePop.Designer.cs">
+      <DependentUpon>updatePop.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
@@ -131,6 +143,12 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="searchPop.resx">
+      <DependentUpon>searchPop.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="updatePop.resx">
+      <DependentUpon>updatePop.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

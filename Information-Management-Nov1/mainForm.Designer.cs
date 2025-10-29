@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(mainForm));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.linkedImport = new System.Windows.Forms.LinkLabel();
             this.linkedReload = new System.Windows.Forms.LinkLabel();
@@ -195,8 +195,8 @@
             // 
             // mainGrid
             // 
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 8.25F);
-            this.mainGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 8.25F);
+            this.mainGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
             this.mainGrid.BackgroundColor = System.Drawing.SystemColors.Control;
             this.mainGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             resources.ApplyResources(this.mainGrid, "mainGrid");
@@ -318,6 +318,7 @@
             this.deleteBtn.Name = "deleteBtn";
             this.deleteBtn.TabStop = false;
             this.deleteBtn.UseVisualStyleBackColor = false;
+            this.deleteBtn.Click += new System.EventHandler(this.deleteBtn_Click);
             // 
             // searchBtn
             // 
@@ -329,6 +330,7 @@
             this.searchBtn.Name = "searchBtn";
             this.searchBtn.TabStop = false;
             this.searchBtn.UseVisualStyleBackColor = false;
+            this.searchBtn.Click += new System.EventHandler(this.searchBtn_Click);
             // 
             // updateBtn
             // 
@@ -340,6 +342,7 @@
             this.updateBtn.Name = "updateBtn";
             this.updateBtn.TabStop = false;
             this.updateBtn.UseVisualStyleBackColor = false;
+            this.updateBtn.Click += new System.EventHandler(this.updateBtn_Click);
             // 
             // label10
             // 
