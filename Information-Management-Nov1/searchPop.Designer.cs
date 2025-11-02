@@ -65,7 +65,7 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(124, 38);
             this.button1.TabIndex = 1;
-            this.button1.Text = "exit";
+            this.button1.Text = "Close";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -189,9 +189,13 @@
             // 
             // searchGrid
             // 
+            this.searchGrid.AllowUserToAddRows = false;
+            this.searchGrid.AllowUserToDeleteRows = false;
             this.searchGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.searchGrid.Location = new System.Drawing.Point(21, 84);
             this.searchGrid.Name = "searchGrid";
+            this.searchGrid.ReadOnly = true;
+            this.searchGrid.RowHeadersVisible = false;
             this.searchGrid.RowHeadersWidth = 51;
             this.searchGrid.RowTemplate.Height = 24;
             this.searchGrid.Size = new System.Drawing.Size(956, 365);

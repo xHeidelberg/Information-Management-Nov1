@@ -23,14 +23,22 @@ namespace Information_Management_Nov1
         }
 
         private void LoadDataIntoDataGridView(string engineNum = "", string chasisNum = "", string engineS = "",
-    string mod = "", string yearM = "", string ownerN = "", string purchaseD = "")
+        string mod = "", string yearM = "", string ownerN = "", string purchaseD = "")
         {
             DataTable searchResults = crudInitiator.searchInititiator(engineNum, chasisNum, engineS, mod, yearM, ownerN, purchaseD);
+            if (searchResults.Rows.Count == 0)
+            {
+                MessageBox.Show("No records found", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+
             searchGrid.DataSource = searchResults;
         }
 
         private void searchBtn_Click(object sender, EventArgs e)
         {
+            searchGrid.DataSource = null;
             string engineNumber = enginenumberInput.Text;
             string chasisNumber = chassisInput.Text;
             string engineSize = enginesizeInput.Text;
@@ -44,7 +52,6 @@ namespace Information_Management_Nov1
                 MessageBox.Show("Please fill in at least one search field.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
-
             LoadDataIntoDataGridView(engineNumber, chasisNumber, engineSize, model, yearModel, ownerName);
         }
 

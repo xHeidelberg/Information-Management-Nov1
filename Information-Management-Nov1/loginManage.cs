@@ -23,10 +23,9 @@ namespace Information_Management_Nov1
             string selector = "SELECT * FROM basemanage.credential WHERE username=@username AND password=@password";
             using (MySqlConnection connection = new MySqlConnection(initiate))
             {
-                connection.Open();
-
                 try
                 {
+                    connection.Open();
                     using (MySqlCommand command = new MySqlCommand(selector, connection))
                     {
                         //parameter

@@ -1,23 +1,26 @@
-﻿using System;
+﻿// SQL
+using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-// SQL
-using MySql.Data.MySqlClient;
 
 namespace Information_Management_Nov1
 {
     public partial class mainForm : Form
     {
+        private DataTable vehicleTable;
         // Minimum of 14 - 17 Engine Number/Chassis Number
         public mainForm()
         {
             InitializeComponent();
+            mainGrid.CellDoubleClick += mainGrid_DoubleClick; // Double Click update
             allControl.viewDatabaseTrigger(mainGrid); // auto load without reload
         }
 
@@ -139,16 +142,58 @@ namespace Information_Management_Nov1
             
         }
 
-        private void updateBtn_Click(object sender, EventArgs e)
-        {
-            updatePop pop = new updatePop();
-            pop.ShowDialog();
-        }
 
         private void searchBtn_Click(object sender, EventArgs e)
         {
             searchPop searchPop = new searchPop();
             searchPop.ShowDialog();
         }
+
+
+
+
+        // Double Click to update
+        private void LoadVehicleData()
+        {
+            string sqlQuery = "SELECT recordNumber, engineNumber, chasisNumber, engineSize, model, yearModel, ownerName, purchaseDate FROM basemanage.vehiclelist";
+            string connectionString = "server=localhost; user id=user; password=123456789; database=basemanage";
+
+            try
+            {
+                using (MySqlConnection connection = new MySqlConnection(connectionString))
+                {
+                    using (MySqlDataAdapter adapter = new MySqlDataAdapter(sqlQuery, connection))
+                    {
+                        DataTable vehicleTable = new DataTable();
+                        adapter.Fill(vehicleTable);
+                        mainGrid.DataSource = vehicleTable;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error loading vehicle data from MySQL: {ex.Message}", "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+        private void mainGrid_DoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                if (mainGrid.Rows[e.RowIndex].Cells[0].Value != null)
+                {
+                    // Store the unique record ID as a string
+                    string selectedRecordId = mainGrid.Rows[e.RowIndex].Cells[0].Value.ToString();
+                    using (updatePop vehicleUpdateForm = new updatePop(selectedRecordId))
+                    {
+                        DialogResult result = vehicleUpdateForm.ShowDialog();
+                        if (result == DialogResult.OK)
+                        {
+                            LoadVehicleData();
+                        }
+                    }
+                }
+            }
+        }
+
     }
 }

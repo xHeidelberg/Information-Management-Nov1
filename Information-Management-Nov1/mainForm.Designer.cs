@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(mainForm));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.linkedImport = new System.Windows.Forms.LinkLabel();
             this.linkedReload = new System.Windows.Forms.LinkLabel();
@@ -59,7 +59,6 @@
             this.addBtn = new System.Windows.Forms.Button();
             this.deleteBtn = new System.Windows.Forms.Button();
             this.searchBtn = new System.Windows.Forms.Button();
-            this.updateBtn = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.statusLabel = new System.Windows.Forms.Label();
@@ -195,13 +194,18 @@
             // 
             // mainGrid
             // 
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 8.25F);
-            this.mainGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
+            this.mainGrid.AllowUserToAddRows = false;
+            this.mainGrid.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 8.25F);
+            this.mainGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.mainGrid.BackgroundColor = System.Drawing.SystemColors.Control;
             this.mainGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             resources.ApplyResources(this.mainGrid, "mainGrid");
             this.mainGrid.Name = "mainGrid";
+            this.mainGrid.ReadOnly = true;
+            this.mainGrid.RowHeadersVisible = false;
             this.mainGrid.RowTemplate.Height = 24;
+            this.mainGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.mainGrid.TabStop = false;
             // 
             // chassisInput
@@ -332,18 +336,6 @@
             this.searchBtn.UseVisualStyleBackColor = false;
             this.searchBtn.Click += new System.EventHandler(this.searchBtn_Click);
             // 
-            // updateBtn
-            // 
-            this.updateBtn.BackColor = System.Drawing.Color.Beige;
-            this.updateBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.updateBtn.FlatAppearance.BorderSize = 0;
-            resources.ApplyResources(this.updateBtn, "updateBtn");
-            this.updateBtn.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.updateBtn.Name = "updateBtn";
-            this.updateBtn.TabStop = false;
-            this.updateBtn.UseVisualStyleBackColor = false;
-            this.updateBtn.Click += new System.EventHandler(this.updateBtn_Click);
-            // 
             // label10
             // 
             resources.ApplyResources(this.label10, "label10");
@@ -379,7 +371,6 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(40)))), ((int)(((byte)(49)))));
             this.ControlBox = false;
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.updateBtn);
             this.Controls.Add(this.searchBtn);
             this.Controls.Add(this.deleteBtn);
             this.Controls.Add(this.addBtn);
@@ -442,7 +433,6 @@
         private System.Windows.Forms.Button addBtn;
         private System.Windows.Forms.Button deleteBtn;
         private System.Windows.Forms.Button searchBtn;
-        private System.Windows.Forms.Button updateBtn;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label statusLabel;
